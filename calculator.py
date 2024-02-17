@@ -19,8 +19,6 @@ def main(input: str):
         elif c == '*':
             result = a * b
         elif c == '/':
-            if b == 0:
-               raise Exception("Деление на ноль не допускается.")
             result = a // b
         else:
             raise Exception("Недопустимая арифметическая операция. Используйте +, -, *, либо /.")
