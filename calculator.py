@@ -1,6 +1,6 @@
 def main(input: str):
     try:
-        inp = input_str.split()       
+        inp = input.split()       
         
         if len(inp) != 3:
             raise Exception("Формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)")
@@ -26,7 +26,10 @@ def main(input: str):
         return str(result)
     
     except Exception as e:
-        return str(e)
-        
+        print(e)
+        return None
+
 input_str = input()
-print(main(input_str))
+result = main(input_str)
+if result != None:
+    print(result)
