@@ -5,7 +5,7 @@
 
 
 import logging
-logging.basicConfig(level=logging.DEBUG, filename="py_log.log", filemode="w" )
+logging.basicConfig(filename="py_log.log", filemode="w" )
 
 err = 'При вводе списка чисел была допущена ошибка'
 
