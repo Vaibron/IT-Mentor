@@ -5,7 +5,9 @@
 
 import random
 import logging
+
 logging.basicConfig(level=logging.DEBUG, filename="py_log.log", filemode="w" )
+
 
 def random_numbers(a, b):
     num = random.randint(a, b)
@@ -13,9 +15,9 @@ def random_numbers(a, b):
     return num
 
 
-
 a, b = map(float, input(f'Введите диспазон чисел от 0 до ꝏ').split())
 logging.info('Введены значения a, b')
+
 try:
     if a > 0 and b > 0:
         print(random_numbers(a, b))

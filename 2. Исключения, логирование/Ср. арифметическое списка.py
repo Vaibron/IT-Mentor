@@ -3,6 +3,7 @@
 программа должна корректно обработать эту ошибку и выдать соответствующее сообщение. 
 Информация об ошибках должна быть записана в лог."""
 
+
 import logging
 logging.basicConfig(level=logging.DEBUG, filename="py_log.log", filemode="w" )
 
