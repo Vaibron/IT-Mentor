@@ -12,9 +12,10 @@ def quadratic_equation(a, b, c):
        if D > 0:
             x1 = (-b - D**0.5) / (2*a)
             x2 = (-b + D**0.5) / (2*a)
+            logging.warning('Ошибка: Исключение: D < 0')
             return x1, x2
        elif D == 0:
-            logging.info('D = 0')
+            logging.warning('D = 0')
             x = -b / 2*a
             return x
        else:

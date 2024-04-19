@@ -22,3 +22,6 @@ except ValueError:
 except ZeroDivisionError:
     logging.error("Ошибка: список чисел пуст")
     print(err)
+except Exception as e:
+    logging.error(f"Ошибка: {e}")
+    print(err)
