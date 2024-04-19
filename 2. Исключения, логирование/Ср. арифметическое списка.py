@@ -5,7 +5,7 @@
 
 
 import logging
-#logging.basicConfig(filename="py_log.log", filemode="w" )
+logging.basicConfig(filename="py_log.log", filemode="w" )
 
 err = 'При вводе списка чисел была допущена ошибка'
 
@@ -14,7 +14,7 @@ def average(lst):
     return num
 
 try:
-    lst = list(map(float, input(f'Введите числа через пробел').split()))
+    lst = list(map(float, input('Введите числа через пробел').split()))
     print(average(lst))
 except ValueError:
     logging.error("Ошибка: в списке имеются строки")
