@@ -3,15 +3,17 @@
 программа должна корректно обработать эту ошибку и выдать соответствующее сообщение. 
 Информация об ошибках должна быть записана в лог."""
 
-
 import logging
-logging.basicConfig(filename="py_log.log", filemode="w" )
+
+logging.basicConfig(filename="py_log.log", filemode="w")
 
 err = 'При вводе списка чисел была допущена ошибка'
 
+
 def average(lst):
-    num  = sum(lst) / len(lst)
+    num = sum(lst) / len(lst)
     return num
+
 
 try:
     lst = list(map(float, input('Введите числа через пробел').split()))
