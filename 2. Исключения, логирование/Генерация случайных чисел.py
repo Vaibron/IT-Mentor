@@ -14,7 +14,7 @@ def random_numbers(a, b):
     return num
 
 
-a, b = map(int, input(f'Введите диспазон чисел от 0 до ꝏ: ').split())
+a, b = map(int, input(f'Введите диспазон чисел от 0 до ꝏ : ').split())
 
 try:
     if a > 0 and b > 0:
