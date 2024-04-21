@@ -1,3 +1,4 @@
+дщд 
 Структуры данных Stack, Queue, Deque, List, Hash table
 1.	Стек (Stack):
 o	Структура данных, работающая по принципу "последний вошел, первый вышел" (LIFO - Last In, First Out).
