@@ -17,7 +17,7 @@ def random_numbers(a, b):
 try:
     a, b = map(int, input(f'Введите диспазон чисел от 0 до ꝏ : ').split())
     if a > 0 and b > 0:
-        print(random_numbers(a, b))
+        print(f'Случайное число - {random_numbers(a, b)}')
     else:
         raise Exception('Границы диапазона меньше нуля')
 
