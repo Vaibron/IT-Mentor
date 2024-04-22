@@ -27,7 +27,7 @@ def quadratic_equation(a, b, c):
 
 
 try:
-    a, b, c = map(float, input().split())
+    a, b, c = map(float, input(Введите коэффициенты уравнения: a, b, c: ).split())
     print(quadratic_equation(a, b, c))
 except Exception as e:
     logging.error(e)
