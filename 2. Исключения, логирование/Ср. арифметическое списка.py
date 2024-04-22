@@ -12,7 +12,7 @@ err = 'При вводе списка чисел была допущена ош�
 
 def average(lst):
     num = sum(lst) / len(lst)
-    return num
+    return int(num)
 
 
 try:
