@@ -6,7 +6,7 @@
 import random
 import logging
 
-logging.basicConfig(filename="py_log.log", filemode="w")
+logging.basicConfig(filename="py_log1.log")
 
 
 def random_numbers(a, b):
@@ -14,14 +14,13 @@ def random_numbers(a, b):
     return num
 
 
-a, b = map(int, input(f'Введите диспазон чисел от 0 до ꝏ : ').split())
-
 try:
+    a, b = map(int, input(f'Введите диспазон чисел от 0 до ꝏ : ').split())
     if a > 0 and b > 0:
         print(random_numbers(a, b))
     else:
-        logging.error('Ошибка: границы диапазона меньше нуля')
-        raise Exception('Error: Введите диапазон значений заново')
+        raise Exception('Границы диапазона меньше нуля')
 
 except Exception as e:
-    print(e)
+    logging.error(e)
+    print(f'Ошибка: {e}. Введите диапазон значений заново')

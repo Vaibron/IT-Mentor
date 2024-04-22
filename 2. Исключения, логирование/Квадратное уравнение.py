@@ -4,7 +4,7 @@
 
 import logging
 
-logging.basicConfig(filename="py_log.log", filemode="w")
+logging.basicConfig(filename="py_log2.log")
 
 
 def quadratic_equation(a, b, c):
@@ -13,19 +13,22 @@ def quadratic_equation(a, b, c):
         if D > 0:
             x1 = (-b - D ** 0.5) / (2 * a)
             x2 = (-b + D ** 0.5) / (2 * a)
-            logging.warning('Ошибка: Исключение: D < 0')
             return x1, x2
         elif D == 0:
             logging.warning('D = 0')
             x = -b / 2 * a
             return x
         else:
-            raise Exception('Попробуйте еще раз с другими коэффициентами')
+            raise Exception('D < 0')
 
     except Exception as e:
-        logging.error('Ошибка: Исключение: D < 0')
-        return str(e)
+        logging.error(e)
+        return str('Попробуйте еще раз с другими коэффициентами')
 
 
-a, b, c = map(float, input().split())
-print(quadratic_equation(a, b, c))
+try:
+    a, b, c = map(float, input().split())
+    print(quadratic_equation(a, b, c))
+except Exception as e:
+    logging.error(e)
+    print('Попробуйте еще раз с другими коэффициентами')
