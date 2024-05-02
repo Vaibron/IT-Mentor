@@ -2,6 +2,5 @@
 
 n = 1
 while n <= 10:
-    y = n**2
-    print(y)
+    print(n**2)
     n += 0.5
