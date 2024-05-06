@@ -5,14 +5,14 @@
 D, M = map(int, input().split())
 
 match M:
-    case 1, 3, 5, 7, 8, 10:
+    case 1 | 3 | 5 | 7 | 8 | 10:
         match D:
             case 31:
                 M += 1
                 D = 1
             case _:
                 D += 1
-    case 4, 6, 9, 11:
+    case 4 | 6 | 9 | 11:
         match D:
             case 30:
                 M += 1
