@@ -2,3 +2,4 @@
 
 file = open('lorum.txt', mode='r', encoding='utf-8')
 print(file.read())
+
