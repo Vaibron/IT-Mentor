@@ -1,8 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-plt.style.use('ggplot')  # Красивые графики
-plt.rcParams['figure.figsize'] = (10, 5)  # Размер картинок
+plt.style.use('ggplot')
+plt.rcParams['figure.figsize'] = (10, 5)
 
 address = '/Users/aleksejsypko/Desktop/Python/PycharmProjects/5. Потоки ввода-вывода/bikes.csv'
 bikes = pd.read_csv(address,
