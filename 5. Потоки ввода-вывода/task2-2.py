@@ -12,7 +12,7 @@ print(complaints)
 print(complaints[:5])
 
 # срез 5 строк, столбца Complaint Typ
-print(complaints['Complaint Type'][:5])  # можно так complaints[:5]['Complaint Type']
+print(complaints['Complaint Type'][:5])  # можно так - complaints[:5]['Complaint Type']
 
 # Выбор нескольких столбцов (две пары квадратных скобок) + срез 10 строк
 print(complaints[['Complaint Type', 'Borough']][:10])
