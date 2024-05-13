@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 plt.rcParams['figure.figsize'] = (10, 5)
 
-address = '/Users/aleksejsypko/Desktop/Python/PycharmProjects/5. Потоки ввода-вывода/311-service-requests.csv'
+address = '/Users/aleksejsypko/Desktop/Python/IT-Mentor/5. Потоки ввода-вывода/311-service-requests.csv'
 complaints = pd.read_csv(address)
 print(complaints)
 

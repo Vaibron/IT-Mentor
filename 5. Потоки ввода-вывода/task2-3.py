@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 plt.rcParams['figure.figsize'] = (10, 5)
 
-address = '/Users/aleksejsypko/Desktop/Python/PycharmProjects/5. Потоки ввода-вывода/bikes.csv'
+address = '/Users/aleksejsypko/Desktop/Python/IT-Mentor/5. Потоки ввода-вывода/bikes.csv'
 bikes = pd.read_csv(address,
                     sep=',', encoding='latin1',
                     parse_dates=['Date'], dayfirst=True,
@@ -50,7 +50,7 @@ plt.show()
 """
 # Код без пояснений
 
-address = '/Users/aleksejsypko/Desktop/Python/PycharmProjects/5. Потоки ввода-вывода/bikes.csv'
+address = '/Users/aleksejsypko/Desktop/Python/IT-Mentor/5. Потоки ввода-вывода/bikes.csv'
 bikes = pd.read_csv(address,
                     sep=',', encoding='latin1',
                     parse_dates=['Date'], dayfirst=True,

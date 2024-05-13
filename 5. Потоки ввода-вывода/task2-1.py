@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 plt.style.use('ggplot')  # Красивые графики
 plt.rcParams['figure.figsize'] = (15, 5)  # Размер картинок
 
-address = '/Users/aleksejsypko/Desktop/Python/PycharmProjects/5. Потоки ввода-вывода/bikes.csv'
+address = '/Users/aleksejsypko/Desktop/Python/IT-Mentor/5. Потоки ввода-вывода/bikes.csv'
 fixed_df = pd.read_csv(address,
                        sep=',', encoding='latin1',
                        parse_dates=['Date'], dayfirst=True,
