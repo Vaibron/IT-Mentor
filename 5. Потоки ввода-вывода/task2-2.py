@@ -10,7 +10,8 @@ plt.rcParams['figure.figsize'] = (10, 5)
 # Задаем путь к файлу CSV
 address = '/Users/aleksejsypko/Desktop/Python/IT-Mentor/5. Потоки ввода-вывода/311-service-requests.csv'
 # Читаем файл CSV в DataFrame pandas
-complaints = pd.read_csv(address)
+complaints = pd.read_csv(address, low_memory=False)
+# Параметр low_memory=False используется для предотвращения предупреждений о смешанных типах данных в столбцах
 # Выводим содержимое DataFrame
 print(complaints)
 
