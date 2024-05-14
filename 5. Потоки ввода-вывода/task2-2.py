@@ -1,29 +1,36 @@
+# Импорт библиотеки pandas, matplotlib и numpy
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Устанавливаем стиль 'ggplot'
 plt.style.use('ggplot')
+# Задаем размер для всех графиков
 plt.rcParams['figure.figsize'] = (10, 5)
 
+# Задаем путь к файлу CSV
 address = '/Users/aleksejsypko/Desktop/Python/IT-Mentor/5. Потоки ввода-вывода/311-service-requests.csv'
+# Читаем файл CSV в DataFrame pandas
 complaints = pd.read_csv(address)
+# Выводим содержимое DataFrame
 print(complaints)
 
-# срез 5 строк
+# Выводим первые 5 строк DataFrame
 print(complaints[:5])
 
-# срез 5 строк, столбца Complaint Typ
-print(complaints['Complaint Type'][:5])  # можно так - complaints[:5]['Complaint Type']
+# Выводим первые 5 значений столбца 'Complaint Type'
+print(complaints['Complaint Type'][:5])  # Альтернативный способ: complaints[:5]['Complaint Type']
 
-# Выбор нескольких столбцов (две пары квадратных скобок) + срез 10 строк
+# Выводим первые 10 строк для столбцов 'Complaint Type' и 'Borough'
 print(complaints[['Complaint Type', 'Borough']][:10])
 
-# самый частый тип по столбцу Complaint Type
+# Выводим количество уникальных значений в столбце 'Complaint Type'
 print(complaints['Complaint Type'].value_counts())
 
-# 10 наиболее частых типов:
+# Сохраняем 10 наиболее частых жалоб в переменную и выводим их
 complaint_counts = complaints['Complaint Type'].value_counts()
 print(complaint_counts[:10])
 
-# Строим график
-complaint_counts[:10].plot(kind='bar')  # Чтобы построить столбчатую диаграмму, необходимо добавить аргумент kind='bar'
+# Строим столбчатую диаграмму для 10 наиболее частых жалоб
+complaint_counts[:10].plot(kind='bar')
+# Отображаем график
 plt.show()
