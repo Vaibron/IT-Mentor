@@ -1,7 +1,6 @@
-# Импорт библиотек pandas, matplotlib и numpy
+# Импорт библиотек pandas, matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 
 # Настройка pandas для отображения максимум 7 строк в выводе
 pd.options.display.max_rows = 7

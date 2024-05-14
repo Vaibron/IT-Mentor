@@ -1,10 +1,10 @@
-# Импорт библиотек pandas, matplotlib и numpy
+# Импорт библиотек pandas, matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 
 # Шаблон адреса для загрузки данных о погоде
-url_template = "http://climate.weather.gc.ca/climate_data/bulk_data_e.html?format=csv&stationID=5415&Year={year}&Month={month}&timeframe=1&submit=Download+Data"
+url_template = ("http://climate.weather.gc.ca/climate_data/bulk_data_e.html?format=csv&stationID=5415&Year="
+                "{year}&Month={month}&timeframe=1&submit=Download+Data")
 
 
 # Функция для загрузки данных о погоде за определенный месяц и год

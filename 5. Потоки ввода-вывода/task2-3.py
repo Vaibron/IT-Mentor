@@ -1,4 +1,4 @@
-# Импорт библиотеки pandas, matplotlib и numpy
+# Импорт библиотеки pandas, matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -9,7 +9,8 @@ plt.rcParams['figure.figsize'] = (10, 5)
 
 # Путь к файлу CSV
 address = '/Users/aleksejsypko/Desktop/Python/IT-Mentor/5. Потоки ввода-вывода/bikes.csv'
-# Чтение данных из CSV-файла, разделенных запятыми, с указанием кодировки, парсингом даты и установкой колонки 'Date' в качестве индекса
+# Чтение данных из CSV-файла, разделенных запятыми, с указанием кодировки,
+# парсингом даты и установкой колонки 'Date' в качестве индекса
 bikes = pd.read_csv(address, sep=',', encoding='latin1', parse_dates=['Date'], dayfirst=True, index_col='Date')
 
 # Создание переменной berri_bikes, которая содержит данные только из столбца 'Berri 1'
@@ -56,7 +57,8 @@ bikes = pd.read_csv(address,
 
 berri_bikes = bikes[['Berri 1']].copy()
 berri_bikes.loc[:, 'Weekday'] = berri_bikes.index.weekday
-weekday_counts = berri_bikes.groupby('Weekday').sum()    # можно и так - weekday_counts = berri_bikes.groupby('Weekday').aggregate(sum)
+weekday_counts = berri_bikes.groupby('Weekday').sum()    
+# можно и так - weekday_counts = berri_bikes.groupby('Weekday').aggregate(sum)
 weekday_counts.index = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 weekday_counts.plot(kind='bar')
 plt.show()
