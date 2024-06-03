@@ -24,11 +24,10 @@ class Dog:
         return f"{self.name} это {self.breed} и ему {self.age} лет."
 
 
-# Пример использования
-dog1 = Dog("Оппи", "Лабрадор", 3)
+dog1 = Dog("Оппи", "Метис", 3)
 dog2 = Dog("Феня", "Мопс", 5)
 
-print(dog1.describe())  # Выведет: Феня это Мопс и ему 5 лет.
-print(dog2.describe())  # Феня это Мопс и ему 5 лет.
+print(dog1.describe())
+print(dog2.describe())
 
-print(dog1 is dog2)  # Выведет: True, так как это Singleton
+print(dog1 is dog2)
