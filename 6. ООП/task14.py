@@ -21,13 +21,14 @@ class PeopleList:
         else:
             raise StopIteration
 
+    def iterate_class(self):
+        for person in self:
+            print(person)
+
 
 people_list = PeopleList()
 people_list.add_person("Елизавета")
 people_list.add_person("Алексей")
 people_list.add_person("Роберт Оппенгеймер")
 
-pl = iter(people_list)
-print(next(pl))
-print(next(pl))
-print(next(pl))
+people_list.iterate_class()
