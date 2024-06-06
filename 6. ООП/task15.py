@@ -47,3 +47,16 @@ obj = LoggedAttributes('Один', 'Два', 'Три')
 obj.attr1 = 'Четыре'
 obj.attr2 = 'Пять'
 obj.attr3 = 'Шесть'
+
+# class LoggedAttributes:
+#     def __init__(self, atr1, atr2, atr3):
+#         self.atr1 = atr1
+#         self.atr2 = atr2
+#         self.atr3 = atr3
+#
+#     def __setattr__(self, name, value):
+#         if name in ['atr1', 'atr2', 'atr3']:
+#             old_value = getattr(self, name, None)
+#             if old_value != value:
+#                 logging.info(f'{name} изменен с {old_value} на {value}')
+#         super().__setattr__(name, value)
