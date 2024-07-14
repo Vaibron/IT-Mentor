@@ -1,5 +1,17 @@
 ### Основные операции SQL и примеры их использования:
 
+**Порядок SQL-запросов**
+```sql
+SELECT DISTINCT column1, column2
+FROM table1
+JOIN table2 ON table1.id = table2.id
+WHERE condition
+GROUP BY column1
+HAVING condition
+ORDER BY column1
+LIMIT 10;
+```
+
 1. **SELECT** - используется для выборки данных из базы данных.
 ```sql
 SELECT имя, фамилия FROM пользователи;
