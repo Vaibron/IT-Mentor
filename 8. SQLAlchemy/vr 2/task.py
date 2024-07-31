@@ -87,13 +87,5 @@ class Order(Base):
     product = relationship("Product", back_populates="orders")
     client = relationship("Client", back_populates="orders")
 
-# Создание сессии для работы с базой данных
-Session = sessionmaker(bind=engine)
-session = Session()
-
 # Создание таблиц в базе данных (только если их нет)
-if not inspect(engine).has_table('Employees'):
-    Base.metadata.create_all(engine)
-
-# Закрытие сессии
-session.close()
+Base.metadata.create_all(engine)
