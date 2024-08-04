@@ -1,11 +1,14 @@
 from sqlalchemy import create_engine, String, Date, ForeignKey, Text, Numeric
-from sqlalchemy.orm import declarative_base, relationship, Mapped, mapped_column
+from sqlalchemy.orm import declarative_base, relationship, Mapped, mapped_column, sessionmaker
 
 # Создание подключения к базе данных
-engine = create_engine('postgresql://postgres:5981@localhost:5432/new_db')
+engine = create_engine('postgresql://postgres:5981@localhost:5432/new_db', echo=True)
 
 # Создание базового класса для моделей
 Base = declarative_base()
+
+# Создание сессии
+Session = sessionmaker(bind=engine)
 
 # Модель Employees
 class Employee(Base):
@@ -22,6 +25,7 @@ class Employee(Base):
 
     orders: Mapped[list["Order"]] = relationship("Order", back_populates="employee")
 
+
 # Модель Clients
 class Client(Base):
     __tablename__ = 'Clients'
@@ -32,6 +36,7 @@ class Client(Base):
     Phone: Mapped[str] = mapped_column(String(20))
 
     orders: Mapped[list["Order"]] = relationship("Order", back_populates="client")
+
 
 # Модель Suppliers
 class Supplier(Base):
@@ -45,6 +50,7 @@ class Supplier(Base):
 
     deliveries: Mapped[list["Delivery"]] = relationship("Delivery", back_populates="supplier")
 
+
 # Модель Deliveries
 class Delivery(Base):
     __tablename__ = 'Deliveries'
@@ -55,6 +61,7 @@ class Delivery(Base):
 
     supplier: Mapped["Supplier"] = relationship("Supplier", back_populates="deliveries")
     products: Mapped[list["Product"]] = relationship("Product", back_populates="delivery")
+
 
 # Модель Products
 class Product(Base):
@@ -72,6 +79,7 @@ class Product(Base):
     delivery: Mapped["Delivery"] = relationship("Delivery", back_populates="products")
     orders: Mapped[list["Order"]] = relationship("Order", back_populates="product")
 
+
 # Модель Orders
 class Order(Base):
     __tablename__ = 'Orders'
@@ -87,5 +95,6 @@ class Order(Base):
     product: Mapped["Product"] = relationship("Product", back_populates="orders")
     client: Mapped["Client"] = relationship("Client", back_populates="orders")
 
-# Создание таблиц в базе данных (только если их нет)
+
+# Создание таблиц в базе данных
 Base.metadata.create_all(engine)
