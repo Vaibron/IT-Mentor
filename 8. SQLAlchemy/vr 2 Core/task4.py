@@ -3,7 +3,6 @@ from sqlalchemy import insert
 
 # Employees
 stmts = [
-    # Employees
     insert(Employees).values([
         {'LastName': 'Иванов', 'FirstName': 'Иван', 'MiddleName': 'Иванович', 'Position': 'Менеджер',
          'Address': 'г. Москва, ул. Ленина, д. 1', 'HomePhone': '+7(900)123-45-67', 'BirthDate': '1990-01-01'},
