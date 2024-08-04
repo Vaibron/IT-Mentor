@@ -1,10 +1,6 @@
 from task import Employee, Client, Supplier, Delivery, Product, Order, Session, engine
 from sqlalchemy.orm import sessionmaker
 
-# Создаем фабрику сессий
-Session = sessionmaker(bind=engine)
-
-# Создаем сессию
 session = Session()
 
 # Обновление данных в таблице Clients

@@ -1,7 +1,7 @@
 from task import Employee, Client, Supplier, Delivery, Product, Order, Session, engine
 from sqlalchemy.orm import sessionmaker
 
-# Получение данных из таблиц и вывод на экран
+
 with Session() as session:
 
     # Получение и вывод данных из таблицы Employees
@@ -40,8 +40,7 @@ with Session() as session:
     for order in orders:
         print(f"OrderID: {order.OrderID}, EmployeeID: {order.EmployeeID}, ProductID: {order.ProductID}, OrderDate: {order.OrderDate}, ExecutionDate: {order.ExecutionDate}, ClientID: {order.ClientID}")
 
-# Создание сессии для работы с базой данных
-Session = sessionmaker(bind=engine)
+
 with Session() as session:
 
     # Inner Join: Employees and Orders
