@@ -1,4 +1,4 @@
-from task import Employees, Clients, engine
+from task import Employees, Clients, Products, Orders, engine
 from sqlalchemy import select, func, distinct
 
 '''8. Получите данные вместе с WHERE, ORDER BY, GROUP BY, DISTINCT и выведите на экран.'''
@@ -40,3 +40,27 @@ with engine.begin() as conn:
 
     for row in result:
         print(row)
+
+
+'''9. Примените несколько функций агрегации и выведите результат на экран'''
+
+# Применение функций агрегации
+print("----- Функции агрегации -----")
+
+# Средняя цена продажи товаров
+with engine.begin() as conn:
+    stmt = select(func.avg(Products.c.SalePrice))
+    average_sale_price = conn.execute(stmt).scalar()
+    print(f"Средняя цена продажи товаров: {average_sale_price}")
+
+# Количество заказов за определенный период
+with engine.begin() as conn:
+    stmt = select(func.count(Orders.c.OrderID)).where(Orders.c.OrderDate >= '2023-12-01')
+    orders_count = conn.execute(stmt).scalar()
+    print(f"Количество заказов с 2023-12-01: {orders_count}")
+
+# Максимальная цена покупки
+with engine.begin() as conn:
+    stmt = select(func.max(Products.c.PurchasePrice))
+    max_purchase_price = conn.execute(stmt).scalar()
+    print(f"Максимальная цена покупки: {max_purchase_price}")
