@@ -3,6 +3,8 @@ from sqlalchemy import create_engine, Table, Column, Integer, String, Date, Text
 
 engine = create_engine('postgresql://postgres:5981@localhost:5432/new_db', echo=True)
 
+
+
 metadata = MetaData()
 
 # Таблица Employees
